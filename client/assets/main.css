@@ -18,8 +18,9 @@
 	[multiple],
 	textarea,
 	select {
-		@apply w-full block rounded-lg sm:text-sm p-3
-        border-gray-300 focus:border-primary focus:ring-4 focus:ring-primary/30
-        transition-all caret-primary;
+		@apply w-full block rounded-lg sm:text-sm p-3 bg-white dark:bg-gray-800
+        border-gray-300 dark:border-gray-700 
+		focus:border-primary dark:focus:border-primary focus:ring-4 focus:ring-primary/30
+        transition caret-primary;
 	}
 }

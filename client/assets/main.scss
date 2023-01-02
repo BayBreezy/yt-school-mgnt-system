@@ -1,0 +1,13 @@
+.btn {
+	@apply px-5 py-3 rounded-lg text-sm font-medium capitalize 
+    outline-none transition inline-flex items-center justify-center;
+	// primary button
+	&.primary {
+		@apply bg-primary dark:bg-primary-500 hover:dark:bg-primary-600 text-white shadow shadow-primary/40 hover:bg-primary-500
+        focus:ring-4 focus:ring-primary/30;
+	}
+	// outlined button
+	&.outline {
+		@apply border border-gray-400 focus:ring-4 focus:ring-gray-600/20;
+	}
+}
