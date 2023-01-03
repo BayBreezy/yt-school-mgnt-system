@@ -1,7 +1,7 @@
 <template>
 	<main class="flex items-center justify-center min-h-screen">
 		<div class="h-screen lg:w-1/2 flex items-center justify-center">
-			<div class="w-[360px] mx-auto">
+			<div class="w-[360px] mx-auto px-4 md:px-10 lg:px-0">
 				<img id="logo" src="/sms_icon.png" alt="Logo" class="rounded-full w-10 mb-10" />
 				<h1 class="text-3xl font-medium frm">Welcome back</h1>
 				<p class="text-gray-500 dark:text-gray-400 mt-2 frm">Enter your credentials to sign in</p>
@@ -41,20 +41,23 @@
 				</p>
 			</div>
 		</div>
-		<div class="min-h-screen lg:w-1/2">
+		<div class="min-h-screen lg:w-1/2 hidden md:block">
 			<img src="/sms_image.png" alt="Auth Image" class="object-cover w-full h-screen" />
 		</div>
 	</main>
 </template>
 
-<script setup>
+<script setup lang="ts">
+	// bring in gsap
 	import { gsap } from "gsap";
 
-	onMounted(() => {
-		const isDark = useDark();
-		const toggleDark = useToggle(isDark);
+	// login function from strapi
+	const { login } = useStrapiAuth();
+	// router from nuxt composable
+	const router = useRouter();
 
-		toggleDark();
+	onMounted(() => {
+		// animate stuff with gsap
 		gsap.from("#logo", { x: -50, opacity: 0, duration: 0.8 });
 		gsap.from(".frm", {
 			delay: 0.4,
@@ -68,5 +71,14 @@
 	});
 
 	// function triggered when the form is submitted
-	const submit = (values, ctx) => {};
+	const submit = async ({ email, password }: { email: string; password: string }, ctx: any) => {
+		useLoading().value = true;
+		try {
+			await login({ identifier: email, password });
+		} catch (error) {
+			console.log(error);
+		} finally {
+			useLoading().value = false;
+		}
+	};
 </script>
