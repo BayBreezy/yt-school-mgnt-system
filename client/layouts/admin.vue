@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<header class="border-b bg-white/80 z-10 sticky top-0">
+		<header class="border-b bg-white/80 z-10 sticky top-0 backdrop-blur">
 			<div class="flex items-center justify-between h-20 px-5">
 				<NuxtLink to="/admin/dashboard" class="flex items-center gap-3">
 					<img src="/sms_icon.png" alt="Logo" class="w-8 h-8 rounded-full" />

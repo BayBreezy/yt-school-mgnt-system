@@ -1,6 +1,9 @@
+$btn-size: 14px !default;
+
 .btn {
-	@apply px-5 py-3 rounded-lg text-sm font-medium capitalize 
+	@apply px-5 py-3 rounded-lg  font-medium capitalize 
     outline-none transition inline-flex items-center justify-center;
+	font-size: $btn-size;
 	// primary button
 	&.primary {
 		@apply bg-primary dark:bg-primary-500 hover:dark:bg-primary-600 text-white shadow shadow-primary/40 hover:bg-primary-500
