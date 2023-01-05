@@ -12,5 +12,5 @@ module.exports = {
 			colors: { primary: { DEFAULT: cols.violet[600], ...cols.violet } },
 		},
 	},
-	plugins: [require("@tailwindcss/forms")],
+	plugins: [require("@tailwindcss/forms"), require("@headlessui/tailwindcss")({ prefix: "ui" })],
 };

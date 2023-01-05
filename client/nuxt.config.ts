@@ -13,9 +13,14 @@ export default defineNuxtConfig({
 		"@morev/vue-transitions/nuxt",
 		"@vueuse/nuxt",
 		"@nuxtjs/strapi",
+		"nuxt-headlessui",
 	],
 	// configure tailwind module
 	tailwindcss: { cssPath: "@/assets/main.css" },
+	// configutr headluess ui module
+	headlessui: {
+		prefix: "H",
+	},
 	// configure head
 	app: {
 		head: {

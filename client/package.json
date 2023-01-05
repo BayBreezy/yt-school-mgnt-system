@@ -11,16 +11,25 @@
     "@nuxtjs/strapi": "^1.6.3",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@tailwindcss/forms": "^0.5.3",
+    "@types/pdfmake": "^0.2.2",
     "@vueuse/core": "^9.9.0",
     "@vueuse/nuxt": "^9.9.0",
     "nuxt": "3.0.0",
+    "nuxt-headlessui": "^1.0.4",
     "nuxt-icon": "^0.1.8",
     "sass": "^1.57.1"
   },
   "dependencies": {
+    "@headlessui/tailwindcss": "^0.1.2",
     "@morev/vue-transitions": "^2.3.5",
+    "@types/datatables.net": "^1.10.24",
     "@vee-validate/rules": "^4.7.3",
+    "datatables.net-buttons-dt": "^2.3.3",
+    "datatables.net-vue3": "^2.0.0",
     "gsap": "^3.11.4",
+    "jquery": "^3.6.3",
+    "jszip": "^3.10.1",
+    "pdfmake": "^0.2.7",
     "vee-validate": "^4.7.3"
   }
 }

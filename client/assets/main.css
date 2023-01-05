@@ -24,3 +24,10 @@
         transition caret-primary;
 	}
 }
+
+@layer components {
+	.btn {
+		@apply px-5 py-3 rounded-lg  font-medium capitalize 
+    outline-none transition inline-flex items-center justify-center text-sm;
+	}
+}

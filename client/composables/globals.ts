@@ -11,3 +11,8 @@ export const useMenuOptions = () =>
 		{ title: "Classes", link: "/admin/classes", icon: "ph:grid-four" },
 		{ title: "Subjects", link: "/admin/subjects", icon: "ph:books" },
 	]);
+
+// function used to export data from tables
+export const useExportData = (dt: any, action: string) => {
+	dt.button(`.buttons-${action}`).trigger();
+};
