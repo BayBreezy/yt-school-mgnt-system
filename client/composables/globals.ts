@@ -16,3 +16,36 @@ export const useMenuOptions = () =>
 export const useExportData = (dt: any, action: string) => {
 	dt.button(`.buttons-${action}`).trigger();
 };
+
+// function used to upload images to our api
+export const useUploadFile = async (image: File, refId: number, ref: string, field: string) => {
+	const fd = new FormData();
+	const client = useStrapiClient();
+
+	// add props to form data
+	fd.append("files", image);
+	fd.append("refId", refId.toString());
+	fd.append("ref", ref);
+	fd.append("field", field);
+
+	try {
+		const { data } = await client<any>("/upload", {
+			method: "POST",
+			body: fd,
+		});
+		return "success";
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+// function used to delete an image/file
+export const useRemoveFile = async (id: number) => {
+	const { delete: remove } = useStrapi();
+	try {
+		await remove<any>("/upload/files", id);
+		return "success";
+	} catch (error) {
+		console.log(error);
+	}
+};

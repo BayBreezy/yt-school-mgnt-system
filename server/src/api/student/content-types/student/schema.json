@@ -30,18 +30,13 @@
       "type": "date",
       "required": true
     },
-    "parents": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::parent.parent",
-      "inversedBy": "students"
-    },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
